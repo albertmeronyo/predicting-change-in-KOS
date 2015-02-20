@@ -50,7 +50,37 @@
     </div>
 
     <div class="container">
-      <h2>Characteristics of input datasets</h2>
+      <p>This page contains additional data and analysis supporting the paper:</p>
+      <ul>
+	<li><a href="#input-data">Characteristics of input datasets</a>
+	<li><a href="#selected-features">Selected features per dataset</a>
+	<li><a href="#features-performance">Relating features and classifier performance</a>
+	<li><a href="#features-classifier">Relating features and best classifier</a>
+      </ul>
+	
+
+      <a name="input-data"><h2>Characteristics of input datasets</h2></a>
+      <p>The following table describes the 139 datasets evalauted in the paper. Each dataset consists of exactly one KOS version chain. One version chain consists of a varying number of KOS versions (at least 3). Datasets 1 and 2 are the <b>CEDAR</b> and <b>DBpedia</b> datasets. Datasets 3-136 are the <b>LOV</b> datasets (i.e. retrieved via the <a href="http://lov.okfn.org/" target="_blank">Linked Open Vocabularies</a> <a href="http://lov.okfn.org/dataset/lov/api" target="_blank">API</a>). Datasets 137-139 are the <b>SPARQL</b> datasets (i.e. KOS version chains reconstructed after querying the 637 public SPARQL endpoints in <a href="http://datahub.io/" target="_blank">datahub.io</a>). Each dataset is described by the following characteristics/features:</p>
+      <ul>
+	<li><i>dataset</i>: name of the version chain
+	<li><i>totalSize</i>: total size of the version chain, adding up the total number of triples in all versions
+	<li><i>nSnapshots</i>: number of versions/snapshots
+	<li><i>avgGap</i>: average time gap between the versions (in number of days) considering their release date
+	<li><i>avgSize</i>: average size of the version chain, in number of triples
+	<li><i>nInserts</i>: total number of inserted triples between all version pairs
+	<li><i>nDeletes</i>: total number of deleted triples between all version pairs
+	<li><i>nComm</i>: total number of common/stable triples between all version pairs
+	<li><i>isTree</i>: whether the KOS forms a tree or a graph
+	<li><i>maxTreeDepth</i>: maximum tree depth considering all versions
+	<li><i>avgTreeDepth</i>: average tree depth
+	<li><i>totalInstances</i>: total number of instances in the version chain
+	<li><i>ratioInstances</i>: ratio of instance triples versus total number of triples
+	<li><i>ratioInstancesVSIS</i>: ratio of instance triples versus instance and structural triples
+	<li><i>totalStructural</i>: total number of structural properties in the version chain
+	<li><i>ratioStructural</i>: ratio of structural triples versus total number of triples
+	<li><i>ratioStructuralVSIS</i>: ratio of structural triples versus instance and structural triples
+      </ul>
+
 
 <div class="table">
 <table class="table table-hover table-condensed table-responsive" style="overflow-x:scroll;">
@@ -198,11 +228,11 @@
 </div>
 
 
-<h2>Ranked selected features on input datasets</h2>
+<a name="selected-features"><h2>Ranked selected features on input datasets</h2>
 
-<h2>Correlation between dataset features and best classifier performance</h2>
+<a name="features-performance"><h2>Correlation between dataset features and best classifier performance</h2>
 
-<h2>Coefficients of the multinomial logistic regression between dataset features and best classifier</h2>
+<a name="features-classifier"><h2>Coefficients of the multinomial logistic regression between dataset features and best classifier</h2>
 
       <hr>
 
