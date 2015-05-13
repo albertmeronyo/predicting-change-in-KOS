@@ -375,7 +375,17 @@
 
 <div id="features-classifier"><h2>Relationshiop between dataset features and best chosen classifier</h2></div>
 
-<p>Through multinomial logistic regression, we analyse what <a href="#input-data">dataset characteristics</a> are good predictors of the classifier type selected as best in our approach. We find that <i>avgGap</i> is influential at selecting a <i>tree</i> classifier instead of a <i>bayes</i> one. We also find that <i>totalSize</i> is influential at selecting <i>functions</i> and <i>rules</i> based classifiers instead of bayes ones. The pictures below show simulations on how these predictors influcence the choice of the different classifier families.</p>
+<p>Through multinomial logistic regression, we analyse
+  what <a href="#input-data">dataset characteristics</a> are good
+  predictors of the classifier type selected as best in our
+  approach. We find that <i>avgGap</i> is influential at selecting
+  a <i>tree</i> classifier instead of a <i>bayes</i> one. We also find
+  that <i>totalSize</i> is influential at selecting <i>functions</i>
+  and <i>rules</i> based classifiers instead of bayes ones. The
+  pictures below show simulations on how these predictors influcence
+  the choice of the different classifier families, in one overall
+  figure and two detailed ones (simulating the effect of <i>avgGap</i>
+  and <i>totalSize</i>).</p>
 
 <center>
 <table class="table-hover" style="text-align:center">
@@ -408,6 +418,7 @@
 </table>
 </center>
 
+<center><img src="img/multinom.png"></center>
 <center><img src="img/avgGap_sim_classifier.png"></center>
 <center><img src="img/totalSize_sim_classifier.png"></center>
 
