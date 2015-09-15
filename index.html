@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Release Early, Release Often: Predicting Change in Versioned KOS on the Web</title>
+    <title>Measuring Quality of Evolution in Diachronic Web Schemas Using Inferred Optimal Change Models</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,9 +43,8 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Release Early, Release Often: Predicting Change in Versioned KOS on the Web</h1>
-        <p>A companion website for the paper <i>Release Early, Release
-        Often: Predicting Change in Versioned Knowledge Organization Systems on the Web</i>.</p>
+        <h1>Measuring Quality of Evolution in Diachronic Web Schemas Using Inferred Optimal Change Models</h1>
+        <p>A companion website for the paper <i>Measuring Quality of Evolution in Diachronic Web Schemas Using Inferred Optimal Change Models</i>.</p>
       </div>
     </div>
 
@@ -58,13 +57,8 @@
 	<li><a href="#features-classifier">Finding relationships between features and best classifier</a>
       </ul>
 
-      <p>The source code of the paper's approach is
-      located <a href="https://github.com/albertmeronyo/ConceptDrift/tree/master/oeml"
-      target="_blank">here</a>. The 139 KOS version chains used as input data can be found <a href="https://github.com/albertmeronyo/ConceptDrift-data" target="_blank">here</a>. Scripts with statistical analyses (i.e. regressions) can be found <a href="https://github.com/albertmeronyo/R-tests/blob/master/first-test/tests/1.R" target="_blank">here</a>.</p>
-	
-
       <div id="input-data"><h2>Characteristics of input datasets</h2></div>
-      <p>The following table describes the 139 datasets evalauted in the paper. Each dataset consists of exactly one KOS version chain. One version chain consists of a varying number of KOS versions (at least 3). Datasets 1 and 2 are the <b>CEDAR</b> and <b>DBpedia</b> datasets. Datasets 3-136 are the <b>LOV</b> datasets (i.e. retrieved via the <a href="http://lov.okfn.org/" target="_blank">Linked Open Vocabularies</a> <a href="http://lov.okfn.org/dataset/lov/api" target="_blank">API</a>). Datasets 137-139 are the <b>SPARQL</b> datasets (i.e. KOS version chains reconstructed after querying the 637 public SPARQL endpoints in <a href="http://datahub.io/" target="_blank">datahub.io</a>). Each dataset is described by the following characteristics/features:</p>
+      <p>The following table describes the 139 datasets evalauted in the paper. Each dataset consists of exactly one version chain. One version chain consists of a varying number of versions (at least 3). Datasets 1 and 2 are the <b>CEDAR</b> and <b>DBpedia</b> datasets. Datasets 3-136 are the <b>LOV</b> datasets (i.e. retrieved via the <a href="http://lov.okfn.org/" target="_blank">Linked Open Vocabularies</a> <a href="http://lov.okfn.org/dataset/lov/api" target="_blank">API</a>). Datasets 137-139 are the <b>SPARQL</b> datasets (i.e. version chains reconstructed after querying the 637 public SPARQL endpoints in <a href="http://datahub.io/" target="_blank">datahub.io</a>). Each dataset is described by the following characteristics/features:</p>
       <ul>
 	<li><i>dataset</i>: name of the version chain
 	<li><i>totalSize</i>: total size of the version chain, adding up the total number of triples in all versions
@@ -77,7 +71,7 @@
   <li><i>ratioInserts</i>: ratio of inter-version statement insertions versus total number of inter-version operations
   <li><i>ratioDeletes</i>: ratio of inter-version statement deletions versus total number of inter-version operations
   <li><i>ratioComm</i>: ratio of inter-version common statements versus total number of inter-version operations
-	<li><i>isTree</i>: whether the KOS forms a tree or a graph
+	<li><i>isTree</i>: whether the schema forms a tree or a graph
 	<li><i>maxTreeDepth</i>: maximum tree depth considering all versions
 	<li><i>avgTreeDepth</i>: average tree depth
 	<li><i>totalInstances</i>: total number of instances in the version chain
@@ -337,7 +331,7 @@
 
 <div id="features-performance"><h2>Relationship between dataset features and best classifier performance</h2></div>
 
-<p>Through regression, we analyse what <a href="#input-data">dataset characteristics</a> are good predictors of the performance of the best selected classifier in our approach, using the area under the ROC curve as a response variable. We find that, under the null hypothesis of normality and non-dependence, the predictors <i>nSnapshots</i>, <i>avgTreeDepth</i>, <i>ratioStructural</i>, <i>ratioInserts</i> and <i>ratioComm</i> are good explanatory variables (i.e. have an influence) with respect to the performance of change detection in KOS version chains. The first model, which includes <i>ratioInserts</i> discarding <i>ratioDeletes</i> and <i>ratioComm</i> due to multi-colinearity, shows the best model fit with respect to the data. The figure below depicts this.
+<p>Through regression, we analyse what <a href="#input-data">dataset characteristics</a> are good predictors of the performance of the best selected classifier in our approach, using the area under the ROC curve as a response variable. We find that, under the null hypothesis of normality and non-dependence, the predictors <i>nSnapshots</i>, <i>avgTreeDepth</i>, <i>ratioStructural</i>, <i>ratioInserts</i> and <i>ratioComm</i> are good explanatory variables (i.e. have an influence) with respect to the performance of change detection in version chains. The first model, which includes <i>ratioInserts</i> discarding <i>ratioDeletes</i> and <i>ratioComm</i> due to multi-colinearity, shows the best model fit with respect to the data. The figure below depicts this.
 
 <center>
 <table class="table-hover">
